@@ -1,9 +1,10 @@
 require('dotenv').config(); // Allows use of environmental variables from the .env file
 const express = require('express'); // Fast web framework for node js
+// const cors = require('cors');
 
 // Getting main api file and loading custom middlewares
 const middlewares = require('./middlewares.js');
-const api = require('./api');
+const api = require('./routes');
 
 // Setting up express & must use middleware
 let app = express();
@@ -11,6 +12,10 @@ app.set('trust proxy', 1); // When using something like nginx or apache as a pro
 app.use(express.json()); // Allows use of req.body (for json)
 
 // Custom Middleware
+// const corsOptions = {
+//     origin: "http://localhost:3001"
+// }
+// app.use(cors(corsOptions));
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 app.use('/public', express.static(__dirname + '/../public'));

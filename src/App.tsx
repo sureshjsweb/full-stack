@@ -1,18 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Example from './components/Example';
+import React from "react";
+import ReactDOM from "react-dom";
+import UserForm from "./components/UserForm";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// Main Entry point function
 function App() {
-	return <Example/>;
+  return <UserForm />;
 }
 
-/**
- * TODO:
- * add routing configuration
- * add redux or any other state manager
- * check out any best practises
- */
-
-// Rendering the entire react application
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
