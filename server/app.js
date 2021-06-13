@@ -18,7 +18,7 @@ app.use(express.json()); // Allows use of req.body (for json)
 // app.use(cors(corsOptions));
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
-app.use('/public', express.static(__dirname + '/../public'));
+app.use('/dist', express.static(__dirname + '/../dist'));
 app.use('/api', api);
 
 // Setting up node js server
@@ -27,4 +27,4 @@ let server = app.listen(port, () => console.log(`Server running on port ${port}.
 
 // Basic Routing
 app.get('/robots.txt', (req, res) => res.sendFile('robots.txt', { root: __dirname }));
-app.get('*', (req, res) => res.sendFile('index.html', { root: __dirname + '/../public' }));
+app.get('*', (req, res) => res.sendFile('index.html', { root: __dirname + '/../dist' }));

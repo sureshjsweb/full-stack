@@ -4,11 +4,11 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 export const UserForm = () => {
   return (
     <section>
-      <h1>User Info Form</h1>
       <Container fluid="lg">
         <Row>
           <Col></Col>
           <Col>
+              <h1>User Info Form</h1>
             <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
